@@ -1,0 +1,25 @@
+Question 2: 
+
+procedure calls: 40060019
+The procedure is called this number of times. 
+
+maximum window depth: 29
+This as the highest number of times the function will be called.
+
+
+					6		8		16
+number of register overflows:		40060015	40060013	40060005
+The overflows for each of the different number of register windows.
+
+
+number of register underflows:	0
+It didnt seem to underflow.
+
+
+
+Question 3: 
+Time it takes to run: 2239.38ms
+The method I used was I got the time from a clock right before running the function.
+And then just after it returned I got the current time for the clock. I then took the 
+first time away from the second time and got the number of milliseconds as a double. 
+I ran this ten times and got an average.

@@ -1,0 +1,49 @@
+;; assume that inp_int is in r2
+;; results are returned in r1
+
+min:
+
+		add r0,r30,r25			; v = a
+
+		sub r25,r29,r0,{C}		; if (b < v)
+		jge	notlessthan		; {
+		xor r0,r0,r0
+		add r0,r29,r25			; 	v = b
+notlessthan:					; }
+
+
+		sub r25,r29,r0,{C}		; if (c < v)
+		jge	notlessthan1		; {
+		xor r0,r0,r0
+		add r0,r28,r25			; 	v = c
+notlessthan1:					; }
+		add r0,r25,r1			; move result into r1 to return
+		
+		// return from function
+		ret ( r31 )0 			; return
+		xor r0,r0,r0
+
+public min5
+min5:
+
+		; set up to call function
+		add r0,r30,r12			; c = j
+		add r0,r29,r13			; b = i
+		add r0,r2,r14			; a = inp_int
+
+		// call the function
+		callr min,r15			; function call
+		xor r0,r0,r0
+		
+		add r0,r28,r12			; c = l
+		add r0,r27,r13			; b = i
+		add r0,r1,r14			; a = returned value from first function call
+
+
+		// call the function
+		call min, r15			; second function call
+		xor r0,r0,r0
+
+		// returnio from functionio
+		ret (r31)0			; return
+		xor r0,r0,r0
