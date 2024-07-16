@@ -1,3 +1,3 @@
-# computer-architecture-2
+# Computer Architecture II
 
 All assignments for: CSU34021
