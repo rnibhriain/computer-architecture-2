@@ -1,3 +1,3 @@
 # Computer Architecture II
 
-All assignments for: CSU34021
+All assignments for module: CSU34021
